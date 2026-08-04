@@ -37,5 +37,8 @@ pipx install -e .
 
 ### Gitignore
 
-Add `.gitignore` with pycache and egg-info.  
+* Add `.gitignore` with pycache and egg-info
+
+---
+
 Commit `chore: project setup`.
