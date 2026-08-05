@@ -4,6 +4,7 @@
 
 - [Minimal Setup](requirements/minimal-setup.md)
 - [File System](requirements/file-system.md)
+- [Argparse Setup](requirements/argparse-setup.md)
 
 ### Py Info
 
