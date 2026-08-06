@@ -34,3 +34,13 @@ def log_file_system_result(result: FileSystemResult, logger: Logger) -> None:
         logger.info(f"Created: {result.path}")
     else:
         logger.info(f"Already exists: {result.path}")
+
+
+def create_folder_and_log_it(parent_path: Path, folder_name: str, logger: Logger) -> None:
+    result =  create_folder(parent_path, folder_name)
+    log_file_system_result(result, logger)
+
+
+def create_file_and_log_it(parent_path: Path, file_name: str, logger: Logger) -> None:
+    result =  create_file(parent_path, file_name)
+    log_file_system_result(result, logger)
