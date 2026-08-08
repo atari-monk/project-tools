@@ -1,0 +1,7 @@
+requirements/minimal-setup.md
+requirements/file-system.md
+docs/requirements/argparse-setup.md
+docs/requirements/init-cli-command-setup.md
+docs/requirements/init-cli-command.md
+py-info/import.md
+py-info/function-name.md

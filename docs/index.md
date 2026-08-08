@@ -6,6 +6,7 @@
 - [File System](requirements/file-system.md)
 - [Argparse Setup](requirements/argparse-setup.md)
 - [Init Cli Command Setup](requirements/init-cli-command-setup.md)
+- [Init Cli Command](requirements/init-cli-command.md)
 
 ### Py Info
 
