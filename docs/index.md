@@ -5,8 +5,13 @@
 - [Minimal Setup](requirements/minimal-setup.md)
 - [File System](requirements/file-system.md)
 - [Argparse Setup](requirements/argparse-setup.md)
-- [Init Cli Command Setup](requirements/init-cli-command-setup.md)
-- [Init Cli Command](requirements/init-cli-command.md)
+
+#### Commands
+
+- [Delete Log](requirements/command/delete-log.md)
+- [Init Cli Setup](requirements/command/init-cli-setup.md)
+- [Init Cli](requirements/command/init-cli.md)
+- [Delete Project](requirements/command/delete-log.md)
 
 ### Py Info
 

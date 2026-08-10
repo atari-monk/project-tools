@@ -2,7 +2,7 @@ import argparse
 from dataclasses import dataclass
 
 from project_tools.const import DEL_LOG_CMD, INIT_CLI_CMD
-from project_tools.command import del_log_cmd, init_cli_cmd
+from project_tools.command import delete_log, init_cli
 
 
 @dataclass(frozen=True)
@@ -28,11 +28,11 @@ def setup_argparse() -> None:
 
     subparsers = parser.add_subparsers(dest="command", metavar="COMMAND",)
 
-    del_log_parser = subparsers.add_parser(DEL_LOG_CMD, help="Move the project-tools log file to the trash.")
-    del_log_parser.set_defaults(func=del_log_cmd.run)
+    delete_log_parser = subparsers.add_parser(DEL_LOG_CMD, help="Move the project-tools log file to the trash.")
+    delete_log_parser.set_defaults(func=delete_log.run)
 
     init_cli_parser = subparsers.add_parser(INIT_CLI_CMD, help="Setup new py cli project.")
-    init_cli_parser.set_defaults(func=init_cli_cmd.run)
+    init_cli_parser.set_defaults(func=init_cli.run)
     for arg in ARGS[INIT_CLI_CMD]:
         create_command_args(init_cli_parser, arg)
     
