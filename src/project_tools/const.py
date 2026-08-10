@@ -3,6 +3,7 @@ from typing import Final
 
 WORKSPACE_PATH: Final[Path] = Path("/home/atari-monk/atari-monk/project")
 DEL_LOG_CMD: Final[str] = "del_log"
+DEL_PROJ_CMD: Final[str] = "del_proj"
 INIT_CLI_CMD: Final[str] = "init_cli"
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {

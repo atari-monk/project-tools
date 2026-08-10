@@ -23,14 +23,7 @@
 * Format - timestamp, level, message
 * Handle terminal and file log 
 
-### Delete log command
-
-* Create file `src/project_tools/del_log_cmd.py`
-* Set path `WORKSPACE_PATH / "log" / "project-tools.log"`
-* Log `Moving log: %s to trash`
-* Check if path exists
-* If so run `subprocess.run(["gio", "trash", str(path)], check=True)`, to move it to trash on ubuntu
-* Log `Log file moved to trash`
+### [Delete log command](command/delete-log.md)
 
 ### Main
 
