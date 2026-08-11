@@ -15,6 +15,7 @@ class ArgsModel:
 
 
 ARGS = {
+    DEL_LOG_CMD: [],
     INIT_CLI_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name"),
                    ArgsModel(short_flag = "-d", flag = "--description", required = True, help = "Project description"),
                    ArgsModel(short_flag = "-n", flag = "--cli_name", required = True, help = "CLI name"),
@@ -31,7 +32,7 @@ def setup_argparse() -> None:
     subparsers = parser.add_subparsers(dest="command", metavar="COMMAND",)
 
     del_log_parser = subparsers.add_parser(DEL_LOG_CMD, help="Move the project-tools log file to the trash.")
-    del_log_parser.set_defaults(func=delete_log.run)
+    create_command_args(del_log_parser, DEL_LOG_CMD, delete_log.run)
 
     init_cli_parser = subparsers.add_parser(INIT_CLI_CMD, help="Setup new py cli project.")
     create_command_args(init_cli_parser, INIT_CLI_CMD, init_cli.run)
