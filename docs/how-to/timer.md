@@ -2,61 +2,32 @@
 
 ## 1. Test it — 5 seconds
 
-Copy and run this directly in the terminal:
+### Start timer
 
 ```bash
-(sleep 5s; notify-send "⏰ Timer finished!" "5 seconds are up!"; paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga) &
+(s=$(date '+%Y-%m-%d %H:%M:%S'); echo "Start: $s" >> /tmp/timer.log; sleep 5s; e=$(date '+%Y-%m-%d %H:%M:%S'); echo "End: $e" >> /tmp/timer.log; notify-send "⏰ Timer finished!" "5 seconds are up!"; paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga) >/dev/null 2>&1 & disown
 ```
 
-You should immediately get your terminal prompt back. After 5 seconds, you'll get a notification and sound.
-
-## 2. Run a 25-minute Pomodoro
+### Read timestamps
 
 ```bash
-(sleep 25m; notify-send "⏰ Pomodoro finished!" "25 minutes are up!"; paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga) &
+cat /tmp/timer.log
 ```
 
-The `&` makes the timer run in the background.
-
-## 3. Python wrapper
-
-Create `pomodoro.py`:
-
-```python
-import sys
-import subprocess
-
-duration = sys.argv[1] if len(sys.argv) > 1 else "25m"
-
-cmd = (
-    f'(sleep {duration}; '
-    f'notify-send "⏰ Pomodoro finished!" "{duration} is up!"; '
-    f'paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga) &'
-)
-
-subprocess.Popen(cmd, shell=True)
-
-print(f"Pomodoro started: {duration}")
-```
-
-### Test with 5 seconds
+### Delete log
 
 ```bash
-python3 pomodoro.py 5s
+rm /tmp/timer.log
 ```
 
-### Normal Pomodoro
+### Clear log without deleting the file
 
 ```bash
-python3 pomodoro.py 25m
+> /tmp/timer.log
 ```
 
-Other examples:
+For **25 minutes**, just change `sleep 5s` to `sleep 25m`.
 
 ```bash
-python3 pomodoro.py 5m
-python3 pomodoro.py 30m
-python3 pomodoro.py 1h
+(s=$(date '+%Y-%m-%d %H:%M:%S'); echo "Start: $s" >> /tmp/timer.log; sleep 25m; e=$(date '+%Y-%m-%d %H:%M:%S'); echo "End: $e" >> /tmp/timer.log; notify-send "⏰ Timer finished!" "25 minutes are up!"; paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga) >/dev/null 2>&1 & disown
 ```
-
-The Python command returns immediately while the timer continues running in the background.
