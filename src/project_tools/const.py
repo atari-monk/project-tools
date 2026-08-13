@@ -6,6 +6,7 @@ DEL_LOG_CMD: Final[str] = "del_log"
 DEL_PROJ_CMD: Final[str] = "del_proj"
 INIT_CLI_CMD: Final[str] = "init_cli"
 GEN_IDX_ORDER_CMD: Final[str] = "gen_idx_order"
+GEN_IDX_CMD: Final[str] = "gen_idx"
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {
     "typeCheckingMode": "strict",

@@ -2,8 +2,8 @@ import argparse
 from dataclasses import dataclass
 from typing import Callable
 
-from project_tools.const import DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD
-from project_tools.command import del_log, del_proj, gen_idx_order, init_cli
+from project_tools.const import DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD
+from project_tools.command import del_log, del_proj, gen_idx, gen_idx_order, init_cli
 
 
 @dataclass(frozen=True)
@@ -21,7 +21,8 @@ ARGS = {
                    ArgsModel(short_flag = "-n", flag = "--cli_name", required = True, help = "CLI name"),
                    ArgsModel(short_flag = "-t", flag = "--page_title", required = True, help = "Page title")],
     DEL_PROJ_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
-    GEN_IDX_ORDER_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
+    GEN_IDX_ORDER_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
+    GEN_IDX_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
 }
 
 
@@ -41,8 +42,11 @@ def setup_argparse() -> None:
     del_proj_parser = subparsers.add_parser(DEL_PROJ_CMD, help="Move the project to the trash.")
     create_command_args(del_proj_parser, DEL_PROJ_CMD, del_proj.run)
 
-    gen_idx_parser = subparsers.add_parser(GEN_IDX_ORDER_CMD, help="Generate docs index order for project.")
-    create_command_args(gen_idx_parser, GEN_IDX_ORDER_CMD, gen_idx_order.run)
+    gen_idx_order_parser = subparsers.add_parser(GEN_IDX_ORDER_CMD, help="Generate docs index order for project.")
+    create_command_args(gen_idx_order_parser, GEN_IDX_ORDER_CMD, gen_idx_order.run)
+
+    gen_idx_parser = subparsers.add_parser(GEN_IDX_CMD, help="Generate docs index for project.")
+    create_command_args(gen_idx_parser, GEN_IDX_CMD, gen_idx.run)
 
     args = parser.parse_args()
 

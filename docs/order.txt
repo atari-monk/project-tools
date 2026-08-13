@@ -6,6 +6,7 @@ requirements/command/init-cli-setup.md
 requirements/command/init-cli.md
 requirements/command/del-proj.md
 requirements/command/gen-idx-order.md
+requirements/command/gen-idx.md
 python/import.md
 python/function-name.md
 how-to/timer.md
