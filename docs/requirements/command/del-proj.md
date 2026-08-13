@@ -1,11 +1,11 @@
-### Delete Project Command
+## Delete Project Command
 
-#### Const
+### Const
 
 * Add const `DEL_PROJ_CMD` with value `del_proj`
 * Use type Final[str]
 
-#### Command
+### Command
 
 * Create file `src/project_tools/command/delete_project.py`
 * Set path `WORKSPACE_PATH / "project_name"`
@@ -14,7 +14,7 @@
 * If so run `subprocess.run(["gio", "trash", str(path)], check=True)`, to move it to trash on ubuntu
 * Log `Log project moved to trash`
 
-#### Argparse Setup
+### Argparse Setup
 
 * Define args config in ARGS under key DEL_PROJ_CMD
 * Add subparser for command with name (pass cmd const) and help

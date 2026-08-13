@@ -1,4 +1,4 @@
-### Delete Log Command
+## Delete Log Command
 
 * Create file `src/project_tools/command/delete_log.py`
 * Set path `WORKSPACE_PATH / "log" / "project-tools.log"`
