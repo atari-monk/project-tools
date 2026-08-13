@@ -1,0 +1,12 @@
+requirements/minimal-setup.md
+requirements/file-system.md
+requirements/argparse-setup.md
+requirements/command/del-log.md
+requirements/command/init-cli-setup.md
+requirements/command/init-cli.md
+requirements/command/del-proj.md
+requirements/command/gen-idx-order.md
+python/import.md
+python/function-name.md
+how-to/timer.md
+how-to/project-tools/add-command.md
