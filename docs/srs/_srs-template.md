@@ -2,7 +2,7 @@
 <!-- SRS File - minimal amount of information to define feature/function, without any duplication or repetition -->
 ## Feature name
 
-Description
+Description (optional)
 
 ### Task 1
 

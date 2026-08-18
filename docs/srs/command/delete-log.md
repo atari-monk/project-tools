@@ -1,4 +1,14 @@
-## Delete Log Command
+## Delete log
+
+Delete log file (`project-tools.log`).
+
+### Constants
+
+* Create file `src/project_tools/const.py`
+* Add `WORKSPACE_PATH: Final[Path] = Path("/home/atari-monk/atari-monk/project")`
+* Add `DEL_LOG_CMD: Final[str] = "del_log"`
+
+### Command
 
 * Create file `src/project_tools/command/delete_log.py`
 * Set path `WORKSPACE_PATH / "log" / "project-tools.log"`

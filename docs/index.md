@@ -1,19 +1,21 @@
 ## Documentation Index
 
-### Requirements
+### Srs
 
-* [Minimal Setup](requirements/minimal-setup.md)
-* [File System](requirements/file-system.md)
-* [Argparse Setup](requirements/argparse-setup.md)
+* [Project Template](srs/project-template.md)
+* [File System](srs/file-system.md)
+* [Logger](srs/logger.md)
+* [Argparse Setup](srs/argparse-setup.md)
+* [Main](srs/main.md)
 
 #### Command
 
-* [Del Log](requirements/command/del-log.md)
-* [Init Cli Setup](requirements/command/init-cli-setup.md)
-* [Init Cli](requirements/command/init-cli.md)
-* [Del Proj](requirements/command/del-proj.md)
-* [Gen Idx Order](requirements/command/gen-idx-order.md)
-* [Gen Idx](requirements/command/gen-idx.md)
+* [Delete Log](srs/command/delete-log.md)
+* [Setup Cli Project](srs/command/setup-cli-project.md)
+* [Delete Project](srs/command/delete-project.md)
+* [Generate Index Order](srs/command/generate-index-order.md)
+* [Generate Index](srs/command/generate-index.md)
+* [Timer](srs/command/timer.md)
 
 ### Python
 
@@ -23,7 +25,4 @@
 ### How To
 
 * [Timer](how-to/timer.md)
-
-#### Project Tools
-
-* [Add Command](how-to/project-tools/add-command.md)
+* [Add Command](how-to/add-command.md)
