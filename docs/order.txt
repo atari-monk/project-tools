@@ -11,5 +11,6 @@ srs/command/generate-index.md
 srs/command/timer.md
 python/import.md
 python/function-name.md
+how-to/git-log.md
 how-to/timer.md
 how-to/add-command.md

@@ -24,5 +24,6 @@
 
 ### How To
 
+* [Git Log](how-to/git-log.md)
 * [Timer](how-to/timer.md)
 * [Add Command](how-to/add-command.md)
