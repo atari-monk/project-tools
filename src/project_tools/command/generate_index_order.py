@@ -2,7 +2,7 @@ from argparse import Namespace
 import logging
 
 from project_tools.const import WORKSPACE_PATH
-from project_tools.shared.docs_order import generate_docs_index_order
+from project_tools.shared.docs_index.docs_order import generate_docs_index_order
 
 
 logger = logging.getLogger(__name__)

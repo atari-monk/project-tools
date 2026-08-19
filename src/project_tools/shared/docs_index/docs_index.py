@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from project_tools.shared.docs_index_render import build_docs_index
+from project_tools.shared.docs_index.docs_index_render import build_docs_index
 
 
 def generate_docs_index(docs_path: Path) -> None:
