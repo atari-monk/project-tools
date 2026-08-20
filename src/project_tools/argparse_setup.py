@@ -12,6 +12,9 @@ class ArgsModel:
     flag: str
     required: bool
     help: str
+    action: str | None = None
+    dest: str | None = None
+    default: object | None = None
 
 
 ARGS = {
@@ -23,7 +26,39 @@ ARGS = {
     DEL_PROJ_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
     GEN_IDX_ORDER_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
     GEN_IDX_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
-    TIMER_CMD: [ArgsModel(short_flag = "-t", flag = "--time", required = True, help = "Time to count down")]
+    TIMER_CMD: [
+        ArgsModel(
+            short_flag="-t",
+            flag="--time",
+            required=False,
+            help="Time to count down, e.g. 5s, 25m or 1h",
+        ),
+        ArgsModel(
+            short_flag="-o",
+            flag="--pomodoro",
+            required=False,
+            action="store_true",
+            default=False,
+            help="Run a 25 minute pomodoro timer",
+        ),
+        ArgsModel(
+            short_flag="-p",
+            flag="--print",
+            required=False,
+            action="store_true",
+            dest="print_log",
+            default=False,
+            help="Print the timer log",
+        ),
+        ArgsModel(
+            short_flag="-e",
+            flag="--edit",
+            required=False,
+            action="store_true",
+            default=False,
+            help="Open the timer log in Visual Studio Code",
+        )
+    ],
 }
 
 
@@ -61,12 +96,28 @@ def setup_argparse() -> None:
     args.func(args)
 
 
-def create_command_arg(parser: argparse.ArgumentParser, model: ArgsModel):
+def create_command_arg(
+    parser: argparse.ArgumentParser,
+    model: ArgsModel,
+) -> None:
+    kwargs = {
+        "required": model.required,
+        "help": model.help,
+    }
+
+    if model.action is not None:
+        kwargs["action"] = model.action
+
+    if model.dest is not None:
+        kwargs["dest"] = model.dest
+
+    if model.default is not None:
+        kwargs["default"] = model.default # type: ignore
+
     parser.add_argument(
         model.short_flag,
         model.flag,
-        required = model.required,
-        help = model.help,
+        **kwargs, # type: ignore
     )
 
 
@@ -75,7 +126,8 @@ def create_command_args(
     command: str,
     func: Callable[[argparse.Namespace], None],
 ) -> None:
-    parser.set_defaults(func=func)
+    parser.set_defaults(func=func,
+        parser=parser)
 
     for arg in ARGS[command]:
         create_command_arg(parser, arg)

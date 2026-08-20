@@ -36,4 +36,5 @@ stop yyyy-mm-dd hh:mm
 
 ### Commits 
 
-* feat: timer
+* feat: timer setup
+* feat: implement timer functionality
