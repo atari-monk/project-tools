@@ -1,20 +1,17 @@
-<!-- SRS File = docs/srs/feature-name.md -->
-<!-- SRS File - minimal amount of information to define feature/function, without any duplication or repetition -->
-## Feature name
+<!-- SRS File - `docs/srs/your-name.md`, minimal amount of information to define feature/function, without any duplication or repetition -->
+## Your srs doc name
 
 Description (optional)
 
-### Task 1
+### Topic
 
-* Requirement 1
+* Requirement
 ... 
-* Requirement n
 
-### Task n
+### Topic name
 
-* Requirement 1
+* Requirement
 ... 
-* Requirement n
 
 ### Commits 
 
