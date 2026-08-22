@@ -8,6 +8,7 @@ INIT_CLI_CMD: Final[str] = "init_cli"
 GEN_IDX_ORDER_CMD: Final[str] = "gen_idx_order"
 GEN_IDX_CMD: Final[str] = "gen_idx"
 TIMER_CMD: Final[str] = "timer"
+SET_STR_CMD: Final[str] = "set_str"
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {
     "typeCheckingMode": "strict",

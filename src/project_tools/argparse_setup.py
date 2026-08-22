@@ -2,8 +2,8 @@ import argparse
 from dataclasses import dataclass
 from typing import Callable
 
-from project_tools.const import DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, TIMER_CMD
-from project_tools.command import delete_log, delete_project, generate_index, generate_index_order, setup_cli_project, timer
+from project_tools.const import DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, TIMER_CMD, SET_STR_CMD
+from project_tools.command import delete_log, delete_project, generate_index, generate_index_order, setup_cli_project, setup_structure, timer
 
 
 @dataclass(frozen=True)
@@ -59,6 +59,7 @@ ARGS = {
             help="Open the timer log in Visual Studio Code",
         )
     ],
+    SET_STR_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
 }
 
 
@@ -86,6 +87,9 @@ def setup_argparse() -> None:
 
     timer_parser = subparsers.add_parser(TIMER_CMD, help="Timer to count down given time interval.")
     create_command_args(timer_parser, TIMER_CMD, timer.run)
+
+    set_str_parser = subparsers.add_parser(SET_STR_CMD, help="Setup file structure of a project.")
+    create_command_args(set_str_parser, SET_STR_CMD, setup_structure.run)
     
     args = parser.parse_args()
 

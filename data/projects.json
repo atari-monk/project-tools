@@ -1,0 +1,17 @@
+{
+    "projects": {
+        "example": {
+            "path": "/home/atari-monk/atari-monk/project/example-project",
+            "folders": [
+                "src",
+                "tests",
+                "docs"
+            ],
+            "files": [
+                "README.md",
+                "src/main.py",
+                "tests/test_main.py"
+            ]
+        }
+    }
+}
