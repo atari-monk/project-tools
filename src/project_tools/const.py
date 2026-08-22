@@ -9,6 +9,7 @@ GEN_IDX_ORDER_CMD: Final[str] = "gen_idx_order"
 GEN_IDX_CMD: Final[str] = "gen_idx"
 TIMER_CMD: Final[str] = "timer"
 SET_STR_CMD: Final[str] = "set_str"
+BUNDLE_CMD: Final[str] = "bundle"
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {
     "typeCheckingMode": "strict",

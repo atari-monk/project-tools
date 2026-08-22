@@ -5,7 +5,7 @@
 * Setup command boilerplate for `proj timer -t 25m`.
 * -t arg accepts a time string like `5s or 1h or 25m`.
 * Add --time alias.
-- -o flag runs timer for pomodoro with 25m set.
+* -o flag runs timer for pomodoro with 25m set.
 * Add --pomodoro alias.
 * -p flag prints log file to console.
 * Add --print alias.

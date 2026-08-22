@@ -1,0 +1,59 @@
+{
+    "ignored_folders": [
+        ".git",
+        ".venv",
+        "venv",
+        "__pycache__",
+        ".pytest_cache",
+        ".mypy_cache",
+        ".ruff_cache",
+        "node_modules",
+        "dist",
+        "build"
+    ],
+    "ignored_files": [
+        "code-bundle.md"
+    ],
+    "supported_extensions": [
+        ".py",
+        ".json",
+        ".yaml",
+        ".yml",
+        ".toml",
+        ".ini",
+        ".cfg",
+        ".md",
+        ".txt",
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".html",
+        ".css",
+        ".sql",
+        ".sh",
+        ".bash",
+        ".xml"
+    ],
+    "languages": {
+        ".py": "python",
+        ".json": "json",
+        ".yaml": "yaml",
+        ".yml": "yaml",
+        ".toml": "toml",
+        ".ini": "ini",
+        ".cfg": "ini",
+        ".md": "markdown",
+        ".txt": "text",
+        ".js": "javascript",
+        ".jsx": "javascript",
+        ".ts": "typescript",
+        ".tsx": "typescript",
+        ".html": "html",
+        ".css": "css",
+        ".sql": "sql",
+        ".sh": "bash",
+        ".bash": "bash",
+        ".xml": "xml"
+    }
+}

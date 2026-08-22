@@ -12,6 +12,22 @@
                 "src/main.py",
                 "tests/test_main.py"
             ]
+        },
+        "bundle": {
+            "path": "/home/atari-monk/atari-monk/project/project-tools/src/project_tools/shared/bundle",
+            "folders": [],
+            "files": [
+                "__init__.py",
+                "model.py",
+                "bundler.py"
+            ]
+        },
+        "bundle_data": {
+            "path": "/home/atari-monk/atari-monk/project/project-tools/data",
+            "folders": [],
+            "files": [
+                "bundle.json"
+            ]
         }
     }
 }

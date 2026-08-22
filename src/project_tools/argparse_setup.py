@@ -1,9 +1,10 @@
 import argparse
 from dataclasses import dataclass
-from typing import Callable
+from pathlib import Path
+from typing import Any, Callable
 
-from project_tools.const import DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, TIMER_CMD, SET_STR_CMD
-from project_tools.command import delete_log, delete_project, generate_index, generate_index_order, setup_cli_project, setup_structure, timer
+from project_tools.const import BUNDLE_CMD, DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, TIMER_CMD, SET_STR_CMD
+from project_tools.command import bundle, delete_log, delete_project, generate_index, generate_index_order, setup_cli_project, setup_structure, timer
 
 
 @dataclass(frozen=True)
@@ -14,7 +15,9 @@ class ArgsModel:
     help: str
     action: str | None = None
     dest: str | None = None
-    default: object | None = None
+    default: Any = None
+    nargs: str | int | None = None
+    type: Callable[[str], Any] | None = None
 
 
 ARGS = {
@@ -59,7 +62,23 @@ ARGS = {
             help="Open the timer log in Visual Studio Code",
         )
     ],
-    SET_STR_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
+    SET_STR_CMD: [ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")],
+    BUNDLE_CMD: [
+        ArgsModel(
+            short_flag="-o",
+            flag="--out",
+            required=True,
+            type=Path,
+            help="Path to output markdown file",
+        ),
+        ArgsModel(
+            short_flag="-p",
+            flag="--paths",
+            required=True,
+            nargs="+",
+            type=Path,
+            help="Paths to process",
+    )]
 }
 
 
@@ -90,6 +109,9 @@ def setup_argparse() -> None:
 
     set_str_parser = subparsers.add_parser(SET_STR_CMD, help="Setup file structure of a project.")
     create_command_args(set_str_parser, SET_STR_CMD, setup_structure.run)
+
+    bundle_parser = subparsers.add_parser(BUNDLE_CMD, help="Bundle files.")
+    create_command_args(bundle_parser, BUNDLE_CMD, bundle.run)
     
     args = parser.parse_args()
 
@@ -104,7 +126,7 @@ def create_command_arg(
     parser: argparse.ArgumentParser,
     model: ArgsModel,
 ) -> None:
-    kwargs = {
+    kwargs: dict[str, Any] = {
         "required": model.required,
         "help": model.help,
     }
@@ -116,12 +138,18 @@ def create_command_arg(
         kwargs["dest"] = model.dest
 
     if model.default is not None:
-        kwargs["default"] = model.default # type: ignore
+        kwargs["default"] = model.default
+
+    if model.nargs is not None:
+        kwargs["nargs"] = model.nargs
+
+    if model.type is not None:
+        kwargs["type"] = model.type
 
     parser.add_argument(
         model.short_flag,
         model.flag,
-        **kwargs, # type: ignore
+        **kwargs,
     )
 
 
