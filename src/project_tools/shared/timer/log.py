@@ -1,7 +1,15 @@
-"""Timer log file operations."""
-
 from pathlib import Path
 import subprocess
+
+from project_tools.const import WORKSPACE_PATH
+
+
+TIMER_LOG_PATH = WORKSPACE_PATH / "log" / "timer.log"
+
+
+def get_log_path() -> Path:
+    """Return the timer log file path."""
+    return TIMER_LOG_PATH
 
 
 def read_log(log_path: Path) -> str:

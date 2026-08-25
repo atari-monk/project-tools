@@ -1,22 +1,11 @@
-"""Timer log events."""
-
-from datetime import datetime
-from logging import Logger
+import logging
 
 
-TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M"
-
-
-def current_timestamp() -> str:
-    """Return the current local timestamp in the timer log format."""
-    return datetime.now().strftime(TIMESTAMP_FORMAT)
-
-
-def log_start(logger: Logger) -> None:
+def log_start(logger: logging.Logger, duration: str) -> None:
     """Log the timer start event."""
-    logger.info("start %s", current_timestamp())
+    logger.info("Starting timer -t %s", duration)
 
 
-def log_stop(logger: Logger) -> None:
+def log_stop(logger: logging.Logger, duration: str) -> None:
     """Log the timer stop event."""
-    logger.info("stop %s", current_timestamp())
+    logger.info("Stopping timer -t %s", duration)

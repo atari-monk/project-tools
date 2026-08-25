@@ -1,13 +1,18 @@
-from argparse import Namespace
 import logging
+from argparse import Namespace
 
+from project_tools.const import WORKSPACE_PATH
+from project_tools.logger import add_file_handler
 from project_tools.shared.timer.duration import (
     InvalidDurationError,
     parse_duration,
 )
-from project_tools.shared.timer.log import edit_log, print_log
-from project_tools.shared.timer.logger import get_log_path
-from project_tools.shared.timer.runner import start_timer # type: ignore
+from project_tools.shared.timer.log import (
+    edit_log,
+    get_log_path,
+    print_log,
+)
+from project_tools.shared.timer.runner import start_timer
 
 
 logger = logging.getLogger(__name__)
@@ -17,6 +22,7 @@ POMODORO_DURATION = "25m"
 
 def run(args: Namespace) -> None:
     """Run the timer command."""
+
     if (
         args.time is None
         and not args.pomodoro
@@ -37,12 +43,21 @@ def run(args: Namespace) -> None:
 
     duration = POMODORO_DURATION if args.pomodoro else args.time
 
+    if duration is None:
+        args.parser.print_help()
+        return
+
     try:
         seconds = parse_duration(duration)
     except InvalidDurationError as exc:
         logger.error("%s", exc)
         return
 
-    start_timer(seconds)
+    add_file_handler(
+        logger,
+        WORKSPACE_PATH / "log" / "timer.log",
+    )
 
-    logger.info("Timer started: %s", duration)
+    logger.info("Starting timer -t %s", duration)
+
+    start_timer(seconds, duration)
