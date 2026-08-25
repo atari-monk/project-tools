@@ -1,4 +1,6 @@
 __pycache__
+.pytest_cache
 project_tools.egg-info
 .venv/
 .ruff_cache/
+docs/_prompt.md

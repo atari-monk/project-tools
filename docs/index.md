@@ -1,21 +1,24 @@
 ## Documentation Index
 
-### Srs
+### Software Requirements Specification
 
-* [Project Template](srs/project-template.md)
-* [File System](srs/file-system.md)
-* [Logger](srs/logger.md)
-* [Argparse Setup](srs/argparse-setup.md)
-* [Main](srs/main.md)
+* [Project Template](software-requirements-specification/project-template.md)
+* [File System](software-requirements-specification/file-system.md)
+* [Logger](software-requirements-specification/logger.md)
+* [Argparse Setup](software-requirements-specification/argparse-setup.md)
+* [Main](software-requirements-specification/main.md)
 
 #### Command
 
-* [Delete Log](srs/command/delete-log.md)
-* [Setup Cli Project](srs/command/setup-cli-project.md)
-* [Delete Project](srs/command/delete-project.md)
-* [Generate Index Order](srs/command/generate-index-order.md)
-* [Generate Index](srs/command/generate-index.md)
-* [Timer](srs/command/timer.md)
+* [Delete Log](software-requirements-specification/command/delete-log.md)
+* [Setup Cli Project](software-requirements-specification/command/setup-cli-project.md)
+* [Delete Project](software-requirements-specification/command/delete-project.md)
+* [Generate Index Order](software-requirements-specification/command/generate-index-order.md)
+* [Generate Index](software-requirements-specification/command/generate-index.md)
+* [Timer](software-requirements-specification/command/timer.md)
+* [Setup Structure](software-requirements-specification/command/setup-structure.md)
+* [File Bundling](software-requirements-specification/command/file-bundling.md)
+* [Note](software-requirements-specification/command/note.md)
 
 ### Python
 
@@ -24,6 +27,8 @@
 
 ### How To
 
+* [Set Up Venv](how-to/set-up-venv.md)
+* [Add Command](how-to/add-command.md)
+* [Run Tests](how-to/run-tests.md)
 * [Git Log](how-to/git-log.md)
 * [Timer](how-to/timer.md)
-* [Add Command](how-to/add-command.md)

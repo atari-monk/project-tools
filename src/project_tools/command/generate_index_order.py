@@ -11,6 +11,6 @@ logger = logging.getLogger(__name__)
 def run(args: Namespace) -> None:
     docs_path = WORKSPACE_PATH / args.project / "docs"
 
-    logger.info("Generate index order for project: %s", args.project)
+    logger.info("Generating docs index order file for project: %s", args.project)
 
     generate_docs_index_order(docs_path)

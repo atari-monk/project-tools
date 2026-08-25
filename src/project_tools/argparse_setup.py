@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
-from project_tools.const import BUNDLE_CMD, DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, TIMER_CMD, SET_STR_CMD
-from project_tools.command import bundle, delete_log, delete_project, generate_index, generate_index_order, setup_cli_project, setup_structure, timer
+from project_tools.const import BUNDLE_CMD, DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, NOTE_CMD, TIMER_CMD, SET_STR_CMD
+from project_tools.command import bundle, delete_log, delete_project, generate_index, generate_index_order, note, setup_cli_project, setup_structure, timer
 
 
 @dataclass(frozen=True)
@@ -78,7 +78,29 @@ ARGS = {
             nargs="+",
             type=Path,
             help="Paths to process",
-    )]
+    )],
+    NOTE_CMD: [
+        ArgsModel(
+                    short_flag="-l",
+                    flag="--log",
+                    required=False,
+                    help="Note log name",
+                ),
+        ArgsModel(
+                    short_flag="-t",
+                    flag="--text",
+                    required=False,
+                    help="Text to log",
+                ),
+         ArgsModel(
+                    short_flag="-p",
+                    flag="--print",
+                    required=False,
+                    action="store_true",
+                    default=False,
+                    help="Print available note log names",
+                ),
+    ]
 }
 
 
@@ -112,6 +134,9 @@ def setup_argparse() -> None:
 
     bundle_parser = subparsers.add_parser(BUNDLE_CMD, help="Bundle files.")
     create_command_args(bundle_parser, BUNDLE_CMD, bundle.run)
+
+    note_parser = subparsers.add_parser(NOTE_CMD, help="Note with logger.")
+    create_command_args(note_parser, NOTE_CMD, note.run)
     
     args = parser.parse_args()
 

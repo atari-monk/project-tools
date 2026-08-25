@@ -35,7 +35,7 @@ def load_projects(data_path: Path) -> dict[str, Project]:
     for name, project_data in projects_data.items():
         if not _is_project_data(project_data):
             raise ProjectDataError(
-                f"Project '{name}' must be a JSON object."
+                f"Project '{name}' has an invalid project structure."
             )
 
         projects[name] = _load_project(name, project_data)

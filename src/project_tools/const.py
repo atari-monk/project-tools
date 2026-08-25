@@ -10,6 +10,9 @@ GEN_IDX_CMD: Final[str] = "gen_idx"
 TIMER_CMD: Final[str] = "timer"
 SET_STR_CMD: Final[str] = "set_str"
 BUNDLE_CMD: Final[str] = "bundle"
+NOTE_CMD: Final[str] = "note"
+
+NOTE_LOG_CONFIG_PATH: Final[Path] = (WORKSPACE_PATH / "project-tools" / "data" / "note-logs.json")
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {
     "typeCheckingMode": "strict",

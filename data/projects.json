@@ -1,5 +1,10 @@
 {
     "projects": {
+        "template": {
+            "path": "/home/atari-monk/atari-monk/project/template",
+            "folders": [],
+            "files": []
+        },
         "example": {
             "path": "/home/atari-monk/atari-monk/project/example-project",
             "folders": [
@@ -55,6 +60,20 @@
                 "scripts/dev.sh",
                 "README.md",
                 ".gitignore"
+            ]
+        },
+        "note": {
+            "path": "/home/atari-monk/atari-monk/project/project-tools",
+            "folders": [
+                "data",
+                "src/project_tools/shared/note"
+            ],
+            "files": [
+                "data/note-logs.json",
+                "src/project_tools/shared/note/__init__.py",
+                "src/project_tools/shared/note/config.py",
+                "src/project_tools/shared/note/log.py",
+                "src/project_tools/command/note.py"
             ]
         }
     }
