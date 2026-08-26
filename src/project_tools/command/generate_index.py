@@ -1,8 +1,8 @@
 from argparse import Namespace
 import logging
 
-from project_tools.const import WORKSPACE_PATH
-from project_tools.shared.docs_index.docs_index import generate_docs_index
+from project_tools.config import WORKSPACE_PATH
+from project_tools.modules.docs_index.docs_index import generate_docs_index
 
 
 logger = logging.getLogger(__name__)

@@ -2,7 +2,7 @@ from argparse import Namespace
 import logging
 import subprocess
 
-from project_tools.const import WORKSPACE_PATH
+from project_tools.config import WORKSPACE_PATH
 
 
 logger = logging.getLogger(__name__)

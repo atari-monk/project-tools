@@ -1,9 +1,10 @@
 from argparse import Namespace
 import logging
 
-from project_tools.const import INIT_MAIN, WORKSPACE_PATH, get_page_title
-from project_tools.file_system import create_file_with_logging, create_folder_with_logging, log_file_system_result
-from project_tools.generator import set_gitignore, set_pyproject_toml, set_pyright_config
+from project_tools.config import WORKSPACE_PATH
+from project_tools.modules.project_py_cli.const import INIT_MAIN, get_page_title
+from project_tools.shared.file_system import create_file_with_logging, create_folder_with_logging, log_file_system_result
+from project_tools.modules.project_py_cli.generator import set_gitignore, set_pyproject_toml, set_pyright_config
 
 
 logger = logging.getLogger(__name__)

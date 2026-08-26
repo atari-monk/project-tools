@@ -1,8 +1,7 @@
 from pathlib import Path
 import subprocess
 
-from project_tools.const import WORKSPACE_PATH
-
+from project_tools.config import WORKSPACE_PATH
 
 TIMER_LOG_PATH = WORKSPACE_PATH / "log" / "timer.log"
 

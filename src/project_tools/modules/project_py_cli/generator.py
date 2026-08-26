@@ -1,7 +1,9 @@
 import json
 
-from project_tools.const import PYRIGHT_CONFIG, WORKSPACE_PATH
-from project_tools.file_system import FileSystemResult, create_file
+
+from project_tools.config import WORKSPACE_PATH
+from project_tools.shared.file_system import FileSystemResult, create_file
+from project_tools.modules.project_py_cli.const import PYRIGHT_CONFIG
 
 
 def set_pyright_config(project_name: str) -> FileSystemResult:

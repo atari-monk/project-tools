@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-from project_tools.logger import add_file_handler
+from project_tools.shared.logger import add_file_handler
 
 
 logger = logging.getLogger(__name__)
@@ -14,5 +14,8 @@ def log_note(
 ) -> None:
     log_path = log_folder / f"{log_name}.log"
 
-    add_file_handler(logger, log_path)
+
+    if log_name != "project-tools":
+        add_file_handler(logger, log_path)
+
     logger.info(text)

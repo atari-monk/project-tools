@@ -4,11 +4,11 @@ import argparse
 import logging
 import time
 
-from project_tools.const import WORKSPACE_PATH
-from project_tools.logger import add_file_handler, setup_logger
-from project_tools.shared.timer.events import log_stop
-from project_tools.shared.timer.notification import notify_timer_finished
-from project_tools.shared.timer.sound import play_timer_finished_sound
+from project_tools.config import WORKSPACE_PATH
+from project_tools.shared.logger import add_file_handler, setup_logger
+from project_tools.modules.timer.events import log_stop
+from project_tools.modules.timer.notification import notify_timer_finished
+from project_tools.modules.timer.sound import play_timer_finished_sound
 
 
 logger = logging.getLogger(__name__)

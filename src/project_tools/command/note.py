@@ -1,8 +1,8 @@
 from argparse import Namespace
 from typing import cast
 
-from project_tools.const import NOTE_LOG_CONFIG_PATH, WORKSPACE_PATH
-from project_tools.shared.note import load_config, log_note
+from project_tools.config import NOTE_LOG_CONFIG_PATH, WORKSPACE_PATH
+from project_tools.modules.note import load_config, log_note
 
 
 def run(args: Namespace) -> None:

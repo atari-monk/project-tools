@@ -1,18 +1,4 @@
-from pathlib import Path
 from typing import Final
-
-WORKSPACE_PATH: Final[Path] = Path("/home/atari-monk/atari-monk/project")
-DEL_LOG_CMD: Final[str] = "del_log"
-DEL_PROJ_CMD: Final[str] = "del_proj"
-INIT_CLI_CMD: Final[str] = "init_cli"
-GEN_IDX_ORDER_CMD: Final[str] = "gen_idx_order"
-GEN_IDX_CMD: Final[str] = "gen_idx"
-TIMER_CMD: Final[str] = "timer"
-SET_STR_CMD: Final[str] = "set_str"
-BUNDLE_CMD: Final[str] = "bundle"
-NOTE_CMD: Final[str] = "note"
-
-NOTE_LOG_CONFIG_PATH: Final[Path] = (WORKSPACE_PATH / "project-tools" / "data" / "note-logs.json")
 
 PYRIGHT_CONFIG: Final[dict[str, object]] = {
     "typeCheckingMode": "strict",

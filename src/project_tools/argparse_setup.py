@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
 
-from project_tools.const import BUNDLE_CMD, DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, NOTE_CMD, TIMER_CMD, SET_STR_CMD
-from project_tools.command import bundle, delete_log, delete_project, generate_index, generate_index_order, note, setup_cli_project, setup_structure, timer
+from project_tools.command.const import ATOM_GAME_PROJ_CMD, BUNDLE_CMD, DEL_LOG_CMD, DEL_PROJ_CMD, GEN_IDX_CMD, GEN_IDX_ORDER_CMD, INIT_CLI_CMD, NOTE_CMD, TIMER_CMD, SET_STR_CMD
+from project_tools.command import bundle, delete_log, delete_project, generate_atom_game, generate_index, generate_index_order, generate_py_cli, note, setup_structure, timer
 
 
 @dataclass(frozen=True)
@@ -99,8 +99,9 @@ ARGS = {
                     action="store_true",
                     default=False,
                     help="Print available note log names",
-                ),
-    ]
+                )],
+    ATOM_GAME_PROJ_CMD: [
+        ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
 }
 
 
@@ -115,7 +116,7 @@ def setup_argparse() -> None:
     create_command_args(del_log_parser, DEL_LOG_CMD, delete_log.run)
 
     init_cli_parser = subparsers.add_parser(INIT_CLI_CMD, help="Setup new py cli project.")
-    create_command_args(init_cli_parser, INIT_CLI_CMD, setup_cli_project.run)
+    create_command_args(init_cli_parser, INIT_CLI_CMD, generate_py_cli.run)
 
     del_proj_parser = subparsers.add_parser(DEL_PROJ_CMD, help="Move the project to the trash.")
     create_command_args(del_proj_parser, DEL_PROJ_CMD, delete_project.run)
@@ -137,6 +138,9 @@ def setup_argparse() -> None:
 
     note_parser = subparsers.add_parser(NOTE_CMD, help="Note with logger.")
     create_command_args(note_parser, NOTE_CMD, note.run)
+
+    atom_game_parser = subparsers.add_parser(ATOM_GAME_PROJ_CMD, help="Setup new atom engine project.")
+    create_command_args(atom_game_parser, ATOM_GAME_PROJ_CMD, generate_atom_game.run)
     
     args = parser.parse_args()
 

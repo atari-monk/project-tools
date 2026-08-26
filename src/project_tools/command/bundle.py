@@ -1,7 +1,7 @@
 from argparse import Namespace
 import logging
 
-from project_tools.shared.bundle.bundler import bundle_files
+from project_tools.modules.bundle.bundler import bundle_files
 
 
 logger = logging.getLogger(__name__)

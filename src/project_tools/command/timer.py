@@ -1,18 +1,18 @@
 import logging
 from argparse import Namespace
 
-from project_tools.const import WORKSPACE_PATH
-from project_tools.logger import add_file_handler
-from project_tools.shared.timer.duration import (
+from project_tools.config import WORKSPACE_PATH
+from project_tools.shared.logger import add_file_handler
+from project_tools.modules.timer.duration import (
     InvalidDurationError,
     parse_duration,
 )
-from project_tools.shared.timer.log import (
+from project_tools.modules.timer.log import (
     edit_log,
     get_log_path,
     print_log,
 )
-from project_tools.shared.timer.runner import start_timer
+from project_tools.modules.timer.runner import start_timer
 
 
 logger = logging.getLogger(__name__)
