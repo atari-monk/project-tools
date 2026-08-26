@@ -20,7 +20,3 @@ PYRIGHT_CONFIG: Final[dict[str, object]] = {
 INIT_MAIN: Final[str] = """def main() -> None:
     print("Hello World")
 """
-
-
-def get_page_title(project_name: str) -> str:
-    return f"title: {project_name.replace("-", " ").replace("_", " ").title()}"
