@@ -12,7 +12,7 @@ def start_timer(
     command = [
         sys.executable,
         "-m",
-        "project_tools.shared.timer.worker",
+        "project_tools.modules.timer.worker",
         str(seconds),
         duration,
     ]
