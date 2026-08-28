@@ -3,7 +3,8 @@ from logging import Logger
 
 from project_tools.config import WORKSPACE_PATH
 from project_tools.modules.project_common.data_model import PyCliConfig
-from project_tools.shared.file_system import FileSystemResult, create_file, create_file_with_logging, create_folder_with_logging, log_file_system_result
+from project_tools.modules.project_common.generator import create_docs, create_python_package
+from project_tools.shared.file_system import FileSystemResult, create_file, create_folder_with_logging, log_file_system_result
 from project_tools.modules.project_py_cli.const import INIT_MAIN, PYRIGHT_CONFIG
 
 
@@ -53,10 +54,5 @@ def create_project(config: PyCliConfig, logger: Logger):
     result = set_gitignore(config)
     log_file_system_result(result, logger)
 
-    create_folder_with_logging(config.project.path, "src", logger)
-    create_folder_with_logging(config.project.path / "src", config.package_name, logger)
-    create_file_with_logging(config.project.path / "src" / config.package_name, "cli.py", INIT_MAIN, logger)
-
-    create_folder_with_logging(config.project.path, "docs", logger)
-    create_file_with_logging(config.project.path / "docs", "_config.yml", config.project.page_name, logger)
-    create_folder_with_logging(config.project.path / "docs", "requirements", logger)
+    create_python_package(config, logger, INIT_MAIN)
+    create_docs(config, logger)
