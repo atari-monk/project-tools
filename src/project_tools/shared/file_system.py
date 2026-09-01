@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from logging import Logger
+import shutil
 
 @dataclass
 class FileSystemResult:
@@ -49,3 +50,27 @@ def create_folder_with_logging(parent_path: Path, folder_name: str, logger: Logg
 def create_file_with_logging(parent_path: Path, file_name: str, content:str, logger: Logger) -> None:
     result =  create_file(parent_path, file_name, content)
     log_file_system_result(result, logger)
+
+
+def copy_file_with_logging(
+    source: Path,
+    destination: Path,
+    logger: Logger,
+) -> None:
+    if not source.is_file():
+        logger.warning("Source file does not exist: %s", source)
+        return
+
+    try:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+
+        logger.info("Copied %s to %s", source, destination)
+
+    except OSError as error:
+        logger.warning(
+            "Failed to copy %s to %s: %s",
+            source,
+            destination,
+            error,
+        )

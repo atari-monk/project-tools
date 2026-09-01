@@ -20,17 +20,3 @@ def set_project(name: str, description: str, workspace_path: Path) -> ProjectCon
         description,
         path = workspace_path / name,
         page_name = get_page_title(name))
-
-
-@dataclass
-class PyCliConfig:
-    project: ProjectConfig
-    cli_name: str
-    package_name: str
-
-
-def set_py_cli_project(project: ProjectConfig, cli_name: str) -> PyCliConfig:
-    return PyCliConfig(
-        project,
-        cli_name,
-        package_name = project.name.replace("-", "_"))

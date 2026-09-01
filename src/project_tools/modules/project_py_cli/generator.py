@@ -2,9 +2,9 @@ import json
 from logging import Logger
 
 from project_tools.config import WORKSPACE_PATH
-from project_tools.modules.project_common.data_model import PyCliConfig
-from project_tools.modules.project_common.generator import create_docs, create_python_package
-from project_tools.shared.file_system import FileSystemResult, create_file, create_folder_with_logging, log_file_system_result
+from project_tools.modules.project_py_cli.data_model import PyCliConfig
+from project_tools.modules.project_shared.generator import create_docs
+from project_tools.shared.file_system import FileSystemResult, create_file, create_file_with_logging, create_folder_with_logging, log_file_system_result
 from project_tools.modules.project_py_cli.const import INIT_MAIN, PYRIGHT_CONFIG
 
 
@@ -42,7 +42,13 @@ pycache/
     return create_file(config.project.path, ".gitignore", content)
 
 
-def create_project(config: PyCliConfig, logger: Logger):
+def create_python_package(config: PyCliConfig, logger: Logger, main_content: str):
+    create_folder_with_logging(config.project.path, "src", logger)
+    create_folder_with_logging(config.project.path / "src", config.package_name, logger)
+    create_file_with_logging(config.project.path / "src" / config.package_name, "cli.py", main_content, logger)
+
+
+def create_py_cli_project(config: PyCliConfig, logger: Logger):
     create_folder_with_logging(WORKSPACE_PATH, config.project.name, logger)
 
     result = set_pyproject_toml(config)
@@ -55,4 +61,4 @@ def create_project(config: PyCliConfig, logger: Logger):
     log_file_system_result(result, logger)
 
     create_python_package(config, logger, INIT_MAIN)
-    create_docs(config, logger)
+    create_docs(config.project, logger)

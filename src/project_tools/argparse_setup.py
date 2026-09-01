@@ -101,7 +101,8 @@ ARGS = {
                     help="Print available note log names",
                 )],
     ATOM_GAME_PROJ_CMD: [
-        ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name")]
+        ArgsModel(short_flag = "-p", flag = "--project", required = True, help = "Project name"),
+        ArgsModel(short_flag = "-d", flag = "--description", required = True, help = "Project description")]
 }
 
 
