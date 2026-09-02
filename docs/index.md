@@ -31,4 +31,5 @@
 * [Add Command](how-to/add-command.md)
 * [Run Tests](how-to/run-tests.md)
 * [Git Log](how-to/git-log.md)
+* [Project Structure](how-to/project-structure.md)
 * [Timer](how-to/timer.md)

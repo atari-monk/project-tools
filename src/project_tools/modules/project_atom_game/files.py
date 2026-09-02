@@ -1,13 +1,6 @@
-from string import Template
-
 from project_tools.modules.project_shared.data_model import ProjectConfig
-from typing import TypeAlias
-
-Files: TypeAlias = dict[str, str]
-
-
-def t(content: str, **variables: str) -> str:
-    return Template(content).substitute(**variables)
+from project_tools.modules.project_shared.types import Files
+from project_tools.modules.project_shared.utils import t
 
 
 def get_files(config: ProjectConfig) -> Files:
