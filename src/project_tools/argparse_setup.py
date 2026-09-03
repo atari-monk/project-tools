@@ -92,44 +92,78 @@ def create_command_arg(
 
 
 def create_command_args(
-        parser: argparse.ArgumentParser,
-        command: CommandSpec,
-    ) -> None:
-        parser.set_defaults(
-            func=resolve_function(command.function),
+    parser: argparse.ArgumentParser,
+    command: CommandSpec,
+) -> None:
+    if command.function is None:
+        raise ValueError(
+            f"Command '{command.name}' has no function"
         )
 
-        for arg in command.args:
-            create_command_arg(parser, arg)
+    parser.set_defaults(
+        func=resolve_function(command.function),
+    )
+
+    for arg in command.args:
+        create_command_arg(parser, arg)
 
 
 COMMANDS_FILE = Path("/home/atari-monk/atari-monk/project/project-tools/data/commands.yaml")
 
 
-def setup_argparse() -> None:
-    parser = argparse.ArgumentParser( 
-        prog="project-tools",
-        description="Project maintenance tools.")
-
-    subparsers = parser.add_subparsers(dest="command", metavar="COMMAND",)
-
-    commands = load_command_specs(COMMANDS_FILE)
-
+def register_commands(
+    subparsers: Any,
+    commands: tuple[CommandSpec, ...],
+) -> None:
     for command in commands:
         command_parser = subparsers.add_parser(
             command.name,
             help=command.help,
         )
 
-        create_command_args(
-            command_parser,
-            command,
-        )
-    
+        if command.commands:
+            nested_subparsers = command_parser.add_subparsers(
+                dest=f"{command.name}_command",
+                metavar="COMMAND",
+                required=True,
+            )
+
+            register_commands(
+                nested_subparsers,
+                command.commands,
+            )
+        else:
+            create_command_args(
+                command_parser,
+                command,
+            )
+
+
+def setup_argparse() -> None:
+    parser = argparse.ArgumentParser(
+        prog="project-tools",
+        description="Project maintenance tools.",
+    )
+
+    subparsers = parser.add_subparsers(
+        dest="command",
+        metavar="COMMAND",
+    )
+
+    commands = load_command_specs(COMMANDS_FILE)
+
+    register_commands(
+        subparsers,
+        commands,
+    )
+
     args = parser.parse_args()
 
     if args.command is None:
         parser.print_help()
         parser.exit()
+
+    if not hasattr(args, "func"):
+        parser.parse_args([args.command, "--help"])
 
     args.func(args)

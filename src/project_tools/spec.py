@@ -19,5 +19,6 @@ class ArgumentSpec:
 class CommandSpec:
     name: str
     help: str
-    function: str
-    args: tuple[ArgumentSpec, ...]
+    function: str | None = None
+    args: tuple[ArgumentSpec, ...] = ()
+    commands: tuple["CommandSpec", ...] = ()

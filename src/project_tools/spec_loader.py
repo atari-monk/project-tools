@@ -1,8 +1,6 @@
 from pathlib import Path
 from typing import Any
-
 import yaml
-
 from project_tools.spec import ArgumentSpec, CommandSpec
 
 
@@ -13,8 +11,8 @@ def load_command_specs(path: Path) -> tuple[CommandSpec, ...]:
     commands = data["commands"]
 
     return tuple(
-        _load_command_spec(name, value)
-        for name, value in commands.items()
+        _load_command_spec(name, command_data)
+        for name, command_data in commands.items()
     )
 
 
@@ -27,9 +25,15 @@ def _load_command_spec(
         for arg in data.get("args", [])
     )
 
+    commands = tuple(
+        _load_command_spec(child_name, child_data)
+        for child_name, child_data in data.get("commands", {}).items()
+    )
+
     return CommandSpec(
         name=name,
         help=data["help"],
-        function=data["function"],
+        function=data.get("function"),
         args=args,
+        commands=commands,
     )

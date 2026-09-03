@@ -38,23 +38,25 @@ commands:
         required: true
         help: Project name
 
-  gen_idx_order:
-    help: Generate docs index order for project.
-    function: generate_index_order.run
-    args:
-      - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
-
-  gen_idx:
-    help: Generate docs index for project.
-    function: generate_index.run
-    args:
-      - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
+  docs:
+    help: Documentation commands.
+    commands:
+      gen_idx_order:
+        help: Generate docs index order for project.
+        function: generate_index_order.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
+      gen_idx:
+        help: Generate docs index for project.
+        function: generate_index.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
 
   timer:
     help: Timer to count down given time interval.
