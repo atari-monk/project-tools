@@ -6,6 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "project-tools"
 version = "1.0.0"
 description = "CLI tool with project-level tool set"
+dependencies = [
+    "PyYAML>=6.0"
+]
 
 [project.scripts]
 proj = "project_tools.cli:main"
