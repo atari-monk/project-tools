@@ -102,6 +102,7 @@ def create_command_args(
 
     parser.set_defaults(
         func=resolve_function(command.function),
+        parser=parser,
     )
 
     for arg in command.args:
