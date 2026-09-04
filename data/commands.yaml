@@ -1,13 +1,96 @@
 commands:
 
-  del_proj:
-    help: Move the project to the trash.
-    function: delete_project.run
+  timer:
+    help: Timer to count down given time interval.
+    function: timer.run
     args:
+      - short_flag: "-t"
+        flag: "--time"
+        required: false
+        help: Time to count down, e.g. 5s, 25m or 1h
+
+      - short_flag: "-o"
+        flag: "--pomodoro"
+        required: false
+        action: store_true
+        default: false
+        help: Run a 25 minute pomodoro timer
+
       - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
+        flag: "--print"
+        required: false
+        action: store_true
+        dest: print_log
+        default: false
+        help: Print the timer log
+
+      - short_flag: "-e"
+        flag: "--edit"
+        required: false
+        action: store_true
+        default: false
+        help: Open the timer log in Visual Studio Code
+
+  note:
+    help: Note with logger.
+    function: note.run
+    args:
+      - short_flag: "-l"
+        flag: "--log"
+        required: false
+        help: Note log name
+
+      - short_flag: "-t"
+        flag: "--text"
+        required: false
+        help: Text to log
+
+      - short_flag: "-p"
+        flag: "--print"
+        required: false
+        action: store_true
+        default: false
+        help: Print available note log names
+
+  files:
+    help: File operations.
+
+    commands:
+
+      set_str:
+        help: Setup file structure of a project.
+        function: setup_structure.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
+
+      bundle:
+        help: Bundle files.
+        function: bundle.run
+        args:
+          - short_flag: "-o"
+            flag: "--out"
+            required: true
+            type: path
+            help: Path to output markdown file
+
+          - short_flag: "-p"
+            flag: "--paths"
+            required: true
+            nargs: "+"
+            type: path
+            help: Paths to process
+
+      del_proj:
+        help: Move the project to the trash.
+        function: delete_project.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
 
   gen:
     help: Generate projects.
@@ -68,81 +151,3 @@ commands:
             flag: "--project"
             required: true
             help: Project name
-
-  timer:
-    help: Timer to count down given time interval.
-    function: timer.run
-    args:
-      - short_flag: "-t"
-        flag: "--time"
-        required: false
-        help: Time to count down, e.g. 5s, 25m or 1h
-
-      - short_flag: "-o"
-        flag: "--pomodoro"
-        required: false
-        action: store_true
-        default: false
-        help: Run a 25 minute pomodoro timer
-
-      - short_flag: "-p"
-        flag: "--print"
-        required: false
-        action: store_true
-        dest: print_log
-        default: false
-        help: Print the timer log
-
-      - short_flag: "-e"
-        flag: "--edit"
-        required: false
-        action: store_true
-        default: false
-        help: Open the timer log in Visual Studio Code
-
-  set_str:
-    help: Setup file structure of a project.
-    function: setup_structure.run
-    args:
-      - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
-
-  bundle:
-    help: Bundle files.
-    function: bundle.run
-    args:
-      - short_flag: "-o"
-        flag: "--out"
-        required: true
-        type: path
-        help: Path to output markdown file
-
-      - short_flag: "-p"
-        flag: "--paths"
-        required: true
-        nargs: "+"
-        type: path
-        help: Paths to process
-
-  note:
-    help: Note with logger.
-    function: note.run
-    args:
-      - short_flag: "-l"
-        flag: "--log"
-        required: false
-        help: Note log name
-
-      - short_flag: "-t"
-        flag: "--text"
-        required: false
-        help: Text to log
-
-      - short_flag: "-p"
-        flag: "--print"
-        required: false
-        action: store_true
-        default: false
-        help: Print available note log names
