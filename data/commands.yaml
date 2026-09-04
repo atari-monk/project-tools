@@ -5,30 +5,6 @@ commands:
     function: delete_log.run
     args: []
 
-  init_cli:
-    help: Setup new py cli project.
-    function: generate_py_cli.run
-    args:
-      - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
-
-      - short_flag: "-d"
-        flag: "--description"
-        required: true
-        help: Project description
-
-      - short_flag: "-n"
-        flag: "--cli_name"
-        required: true
-        help: CLI name
-
-      - short_flag: "-t"
-        flag: "--page_title"
-        required: true
-        help: Page title
-
   del_proj:
     help: Move the project to the trash.
     function: delete_project.run
@@ -37,6 +13,46 @@ commands:
         flag: "--project"
         required: true
         help: Project name
+
+  gen:
+    help: Generate projects.
+    commands:
+      py_cli:
+        help: Setup new py cli project.
+        function: generate_py_cli.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
+
+          - short_flag: "-d"
+            flag: "--description"
+            required: true
+            help: Project description
+
+          - short_flag: "-n"
+            flag: "--cli_name"
+            required: true
+            help: CLI name
+
+          - short_flag: "-t"
+            flag: "--page_title"
+            required: true
+            help: Page title
+      atom_game:
+        help: Setup new atom engine project.
+        function: generate_atom_game.run
+        args:
+          - short_flag: "-p"
+            flag: "--project"
+            required: true
+            help: Project name
+
+          - short_flag: "-d"
+            flag: "--description"
+            required: true
+            help: Project description
 
   docs:
     help: Documentation commands.
@@ -135,17 +151,3 @@ commands:
         action: store_true
         default: false
         help: Print available note log names
-
-  atom_game:
-    help: Setup new atom engine project.
-    function: generate_atom_game.run
-    args:
-      - short_flag: "-p"
-        flag: "--project"
-        required: true
-        help: Project name
-
-      - short_flag: "-d"
-        flag: "--description"
-        required: true
-        help: Project description
