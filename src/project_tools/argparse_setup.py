@@ -5,7 +5,6 @@ from project_tools.spec import ArgumentSpec, CommandSpec
 from project_tools.spec_loader import load_command_specs
 from project_tools.command import (
     bundle,
-    delete_log,
     delete_project,
     generate_atom_game,
     generate_index,
@@ -39,7 +38,6 @@ def resolve_arg_type(type_name: str | None) -> Any:
 
 COMMAND_FUNCTIONS = {
     "bundle.run": bundle.run,
-    "delete_log.run": delete_log.run,
     "delete_project.run": delete_project.run,
     "generate_atom_game.run": generate_atom_game.run,
     "generate_index.run": generate_index.run,

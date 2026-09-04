@@ -1,10 +1,5 @@
 commands:
 
-  del_log:
-    help: Move the project-tools log file to the trash.
-    function: delete_log.run
-    args: []
-
   del_proj:
     help: Move the project to the trash.
     function: delete_project.run
