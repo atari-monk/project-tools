@@ -1,4 +1,4 @@
-## Generate order file for documentation index
+## Generate docs index order file for a documentation folder
 
 ### Order file
 
@@ -20,6 +20,28 @@
 * The command must produce deterministic output.
 * Running the command multiple times without filesystem changes must produce no changes.
 
+### Making it more generic (new)
+
+* My blog dosent have docs folder so i will make this command work on path so it can be used with any folder
+* Command definition in yaml:
+```yaml
+commands:
+  docs:
+    help: Documentation commands.
+    commands:
+      gen_idx_order:
+        help: Generate docs index order for project.
+        function: generate_index_order.run
+        args:
+          - short_flag: "-p"
+            flag: "--path"
+            required: true
+            type: path
+            help: Path to folder with md docs
+```
+* Put `order.txt` in args.path
+
 ### Commit
 
 * feat: generate order file for docs index
+* feat: generalize order file for docs index

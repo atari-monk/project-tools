@@ -140,9 +140,10 @@ commands:
         function: generate_index_order.run
         args:
           - short_flag: "-p"
-            flag: "--project"
+            flag: "--path"
             required: true
-            help: Project name
+            type: path
+            help: Path to folder with md docs
       gen_idx:
         help: Generate docs index for project.
         function: generate_index.run
