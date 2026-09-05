@@ -20,9 +20,9 @@
 * The command must produce deterministic output.
 * Running the command multiple times without filesystem changes must produce no changes.
 
-### Making it more generic (new)
+### Making it more generic
 
-* My blog dosent have docs folder so i will make this command work on path so it can be used with any folder
+* Support any folder with md docs by taking path to it as arg
 * Command definition in yaml:
 ```yaml
 commands:

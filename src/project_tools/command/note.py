@@ -1,8 +1,9 @@
 from argparse import Namespace
 from typing import cast
 
-from project_tools.config import NOTE_LOG_CONFIG_PATH, WORKSPACE_PATH
-from project_tools.modules.note import load_config, log_note
+from project_tools.config import NOTE_LOG_CONFIG_PATH, LOGS_PATH
+from project_tools.modules.note import load_config
+from project_tools.shared.logger import setup_custom_logger
 
 
 def run(args: Namespace) -> None:
@@ -30,8 +31,10 @@ def run(args: Namespace) -> None:
             f"choose from: {', '.join(config.logs)}"
         )
 
-    log_note(
-        WORKSPACE_PATH / "log",
+    logger = setup_custom_logger(
+        LOGS_PATH,
         log_name,
-        text,
+        "note",
     )
+
+    logger.info(text)

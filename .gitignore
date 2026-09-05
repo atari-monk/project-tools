@@ -3,4 +3,4 @@ __pycache__
 project_tools.egg-info
 .venv/
 .ruff_cache/
-docs/_prompt.md
+prompt/

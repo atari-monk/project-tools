@@ -23,5 +23,11 @@
 
 ### Helpers
 
-* Implement structs and functions in `/home/atari-monk/atari-monk/project/project-tools/src/project_tools/shared/note`
+* Implement structs and functions in `/home/atari-monk/atari-monk/project/project-tools/src/project_tools/modules/note`
 * Use them in command
+
+### Custom Logger
+
+* Logger for this command must be a reference from project-tools app when -l arg is `project-tools`
+    * In this situation use app logger and its log file
+* Otherwise setup independent logger in command with a file from -l arg and to console aswell
