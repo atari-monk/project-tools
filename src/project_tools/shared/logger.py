@@ -46,7 +46,8 @@ def add_file_handler(
 def setup_custom_logger(
     log_folder_path: Path,
     log_name: str,
-    custom_log_name: str
+    command_name: str,
+    console: bool = True,
 ) -> logging.Logger:
     """Return the application logger or an independent custom logger.
 
@@ -59,22 +60,23 @@ def setup_custom_logger(
     if log_name == "project-tools":
         return logging.getLogger()
 
-    logger = logging.getLogger(f"project-tools.{custom_log_name}.{log_name}")
+    logger = logging.getLogger(f"project-tools.{command_name}.{log_name}")
     logger.setLevel(logging.INFO)
     logger.propagate = False
 
     log_folder_path.mkdir(parents=True, exist_ok=True)
 
-    has_stream_handler = any(
-        isinstance(handler, logging.StreamHandler)
-        and not isinstance(handler, logging.FileHandler)
-        for handler in logger.handlers
-    )
+    if console:
+        has_stream_handler = any(
+            isinstance(handler, logging.StreamHandler)
+            and not isinstance(handler, logging.FileHandler)
+            for handler in logger.handlers
+        )
 
-    if not has_stream_handler:
-        stream_handler = logging.StreamHandler()
-        stream_handler.setFormatter(logging.Formatter(LOG_FORMAT))
-        logger.addHandler(stream_handler)
+        if not has_stream_handler:
+            stream_handler = logging.StreamHandler()
+            stream_handler.setFormatter(logging.Formatter(LOG_FORMAT))
+            logger.addHandler(stream_handler)
 
     add_file_handler(
         logger,

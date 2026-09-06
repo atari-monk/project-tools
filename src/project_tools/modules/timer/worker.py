@@ -1,31 +1,25 @@
 """Background timer worker."""
 
 import argparse
-import logging
 import time
 
 from project_tools.config import WORKSPACE_PATH
-from project_tools.shared.logger import add_file_handler, setup_logger
+from project_tools.shared.logger import setup_custom_logger
 from project_tools.modules.timer.events import log_stop
 from project_tools.modules.timer.notification import notify_timer_finished
 from project_tools.modules.timer.sound import play_timer_finished_sound
 
 
-logger = logging.getLogger(__name__)
+logger = setup_custom_logger(
+    WORKSPACE_PATH / "log",
+    "timer",
+    "worker",
+    console=False,
+)
 
 
 def run(seconds: float, duration: str) -> None:
     """Run a timer in the background process."""
-
-    setup_logger(
-        WORKSPACE_PATH / "log",
-        "project-tools",
-    )
-
-    add_file_handler(
-        logger,
-        WORKSPACE_PATH / "log" / "timer.log",
-    )
 
     try:
         time.sleep(seconds)

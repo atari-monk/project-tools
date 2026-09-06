@@ -1,8 +1,7 @@
-import logging
 from argparse import Namespace
 
 from project_tools.config import WORKSPACE_PATH
-from project_tools.shared.logger import add_file_handler
+from project_tools.shared.logger import setup_custom_logger
 from project_tools.modules.timer.duration import (
     InvalidDurationError,
     parse_duration,
@@ -15,7 +14,11 @@ from project_tools.modules.timer.log import (
 from project_tools.modules.timer.runner import start_timer
 
 
-logger = logging.getLogger(__name__)
+logger = setup_custom_logger(
+    WORKSPACE_PATH / "log",
+    "timer",
+    "timer",
+)
 
 POMODORO_DURATION = "25m"
 
@@ -52,11 +55,6 @@ def run(args: Namespace) -> None:
     except InvalidDurationError as exc:
         logger.error("%s", exc)
         return
-
-    add_file_handler(
-        logger,
-        WORKSPACE_PATH / "log" / "timer.log",
-    )
 
     logger.info("Starting timer -t %s", duration)
 
