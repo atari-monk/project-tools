@@ -2,11 +2,14 @@
     "logs": [
         "project-tools",
         "bowling-game",
+        "log",
+        "watch_later",
         "ideas",
         "todo",
         "exercise",
         "jobs",
         "diy",
-        "games"
+        "games",
+        "health"
     ]
 }

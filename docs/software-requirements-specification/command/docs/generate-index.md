@@ -18,7 +18,7 @@
   * `api-reference.md` → `Api Reference`
 * Preserve acronyms/casing that cannot be inferred from kebab-case, e.g. `README.md` → `README`.
 
-Use this format:
+### Format
 
 ```md
 ## Documentation Index
@@ -37,6 +37,8 @@ For files directly under `docs/`:
 ```
 
 ### Example
+
+#### Order file
 
 Given:
 
@@ -68,6 +70,8 @@ getting-started/configuration.md
 getting-started/installation.md
 ```
 
+#### Index file
+
 `docs/index.md` should contain:
 
 ```md
@@ -85,6 +89,11 @@ getting-started/installation.md
 * [Installation](getting-started/installation.md)
 ```
 
+### Command (new to check and implement)
+
+* `proj docs gen_idx -p path_to_folder_with_md_files
+
 ### Commit
 
 * feat: generate docs index
+* feat: generate docs index on any folder

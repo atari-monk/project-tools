@@ -31,10 +31,14 @@ proj timer -t 25m
 
 ### Logger
 
-* Use same setup as cli app logger
+* Setup a custom logger for this command
 * Add a separate log file `/home/atari-monk/atari-monk/project/log/timer.log`
-* So logger logs to console, `project_tools.log` and `timer.log`
-* Make sure other commands dont log to `timer.log`
+* Use `/home/atari-monk/atari-monk/project/project-tools/src/project_tools/shared/logger.py` `setup_custom_logger`
+* The timer command logs to console and `timer.log`
+* The background timer worker logs to `timer.log` only
+* The timer worker must not write timer completion messages to the interactive terminal
+* The timer logger must not propagate to the application logger
+* Other commands must not log to `timer.log`
 
 ### Behavior
 
@@ -50,3 +54,4 @@ proj timer -t 25m
 * feat: timer setup
 * feat: implement timer functionality
 * feat: implement timer logger
+* fix: custom timer logger
