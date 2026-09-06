@@ -1,17 +1,13 @@
 from pathlib import Path
 from typing import Any
 import argparse
+from project_tools.command.docs import generate_index, generate_index_order
+from project_tools.command.files import bundle, delete_project, setup_structure
+from project_tools.command.gen import generate_atom_game, generate_py_cli
 from project_tools.spec import ArgumentSpec, CommandSpec
 from project_tools.spec_loader import load_command_specs
 from project_tools.command import (
-    bundle,
-    delete_project,
-    generate_atom_game,
-    generate_index,
-    generate_index_order,
-    generate_py_cli,
     note,
-    setup_structure,
     timer,
 )
 
