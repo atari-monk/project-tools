@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from project_tools.modules.docs.docs_discovery import discover_documentation_files
+from project_tools.modules.docs.discovery import discover_documentation_files
 
 
 def generate_docs_index_order(docs_path: Path) -> None:
