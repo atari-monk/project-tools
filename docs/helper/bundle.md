@@ -28,8 +28,8 @@
 
 #### Generate Index
 
-/home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/generate-index.md
-/home/atari-monk/atari-monk/project/project-tools/src/project_tools/command/generate_index.py
+/home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/docs/generate-index.md
+/home/atari-monk/atari-monk/project/project-tools/src/project_tools/command/docs/generate_index.py
 /home/atari-monk/atari-monk/project/project-tools/src/project_tools/modules/docs
 
 ### Shared
@@ -72,7 +72,7 @@ proj files bundle \
 ```sh
 proj files bundle \
   -o /home/atari-monk/atari-monk/project/project-tools/prompt/prompt.md \
-  -p /home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/generate-index.md \
-  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/command/generate_index.py \
-  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/modules/docs_index
+  -p /home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/docs/generate-index.md \
+  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/command/docs/generate_index.py \
+  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/modules/docs
 ```

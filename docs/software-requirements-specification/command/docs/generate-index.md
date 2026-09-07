@@ -89,11 +89,11 @@ getting-started/installation.md
 * [Installation](getting-started/installation.md)
 ```
 
-### Command (new to check and implement)
+### Command
 
 * `proj docs gen_idx -p path_to_folder_with_md_files
 
 ### Commit
 
 * feat: generate docs index
-* feat: generate docs index on any folder
+* fix: generate docs index on any folder

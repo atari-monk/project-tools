@@ -2,6 +2,7 @@
 
 ### Software Requirements Specification
 
+* [Srs Template](software-requirements-specification/srs-template.md)
 * [Project Template](software-requirements-specification/project-template.md)
 * [File System](software-requirements-specification/file-system.md)
 * [Logger](software-requirements-specification/logger.md)
@@ -10,15 +11,25 @@
 
 #### Command
 
-* [Delete Log](software-requirements-specification/command/delete-log.md)
-* [Setup Cli Project](software-requirements-specification/command/setup-cli-project.md)
-* [Delete Project](software-requirements-specification/command/delete-project.md)
-* [Generate Index Order](software-requirements-specification/command/generate-index-order.md)
-* [Generate Index](software-requirements-specification/command/generate-index.md)
 * [Timer](software-requirements-specification/command/timer.md)
-* [Setup Structure](software-requirements-specification/command/setup-structure.md)
-* [File Bundling](software-requirements-specification/command/file-bundling.md)
 * [Note](software-requirements-specification/command/note.md)
+
+##### Files
+
+* [Setup Structure](software-requirements-specification/command/files/setup-structure.md)
+* [File Bundling](software-requirements-specification/command/files/file-bundling.md)
+* [Delete Project](software-requirements-specification/command/files/delete-project.md)
+
+##### Gen
+
+* [Setup Cli Project](software-requirements-specification/command/gen/setup-cli-project.md)
+
+##### Docs
+
+* [Print](software-requirements-specification/command/docs/print.md)
+* [New Doc](software-requirements-specification/command/docs/new-doc.md)
+* [Generate Index Order](software-requirements-specification/command/docs/generate-index-order.md)
+* [Generate Index](software-requirements-specification/command/docs/generate-index.md)
 
 ### Python
 
@@ -33,3 +44,7 @@
 * [Git Log](how-to/git-log.md)
 * [Project Structure](how-to/project-structure.md)
 * [Timer](how-to/timer.md)
+
+### Helper
+
+* [Bundle](helper/bundle.md)

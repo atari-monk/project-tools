@@ -149,6 +149,7 @@ commands:
         function: generate_index.run
         args:
           - short_flag: "-p"
-            flag: "--project"
+            flag: "--path"
             required: true
-            help: Project name
+            type: path
+            help: Path to folder with md docs
