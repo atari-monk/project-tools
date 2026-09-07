@@ -2,7 +2,7 @@ from argparse import Namespace
 import logging
 from pathlib import Path
 
-from project_tools.modules.docs.docs_index import generate_docs_index
+from project_tools.modules.docs.index import generate_docs_index
 
 
 logger = logging.getLogger(__name__)

@@ -4,6 +4,10 @@
 
 /home/atari-monk/atari-monk/project/project-tools/prompt/prompt.md
 
+### Data
+
+/home/atari-monk/atari-monk/project/project-tools/data/commands.yaml
+
 ### Timer
 
 /home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/timer.md
@@ -56,7 +60,10 @@ proj files bundle \
 ```sh
 proj files bundle \
   -o /home/atari-monk/atari-monk/project/project-tools/prompt/prompt.md \
-  -p /home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/docs/print.md
+  -p /home/atari-monk/atari-monk/project/project-tools/docs/software-requirements-specification/command/docs/print.md \
+  /home/atari-monk/atari-monk/project/project-tools/data/commands.yaml \
+  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/modules/docs \
+  /home/atari-monk/atari-monk/project/project-tools/src/project_tools/command/docs/generate_index.py
 ```
 
 ##### New doc

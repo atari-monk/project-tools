@@ -54,9 +54,7 @@ commands:
 
   files:
     help: File operations.
-
     commands:
-
       set_str:
         help: Setup file structure of a project.
         function: setup_structure.run
@@ -65,7 +63,6 @@ commands:
             flag: "--project"
             required: true
             help: Project name
-
       bundle:
         help: Bundle files.
         function: bundle.run
@@ -82,7 +79,6 @@ commands:
             nargs: "+"
             type: path
             help: Paths to process
-
       del_proj:
         help: Move the project to the trash.
         function: delete_project.run
@@ -153,3 +149,12 @@ commands:
             required: true
             type: path
             help: Path to folder with md docs
+      print:
+        help: Print documentation categories.
+        function: print.run
+        args:
+          - short_flag: "-p"
+            flag: "--path"
+            required: true
+            type: path
+            help: Path to docs or folder containing md files

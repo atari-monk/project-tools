@@ -1,15 +1,15 @@
 from pathlib import Path
 from typing import Any
 import argparse
-from project_tools.command.docs import generate_index, generate_index_order
-from project_tools.command.files import bundle, delete_project, setup_structure
-from project_tools.command.gen import generate_atom_game, generate_py_cli
 from project_tools.spec import ArgumentSpec, CommandSpec
 from project_tools.spec_loader import load_command_specs
 from project_tools.command import (
-    note,
     timer,
+    note,
 )
+from project_tools.command.files import setup_structure, bundle, delete_project
+from project_tools.command.docs import print, generate_index_order, generate_index
+from project_tools.command.gen import generate_py_cli, generate_atom_game
 
 
 ARG_TYPES = {
@@ -33,15 +33,16 @@ def resolve_arg_type(type_name: str | None) -> Any:
 
 
 COMMAND_FUNCTIONS = {
-    "bundle.run": bundle.run,
-    "delete_project.run": delete_project.run,
-    "generate_atom_game.run": generate_atom_game.run,
-    "generate_index.run": generate_index.run,
-    "generate_index_order.run": generate_index_order.run,
-    "generate_py_cli.run": generate_py_cli.run,
+    "timer.run": timer.run,
     "note.run": note.run,
     "setup_structure.run": setup_structure.run,
-    "timer.run": timer.run,
+    "bundle.run": bundle.run,
+    "delete_project.run": delete_project.run,
+    "generate_py_cli.run": generate_py_cli.run,
+    "generate_atom_game.run": generate_atom_game.run,
+    "generate_index_order.run": generate_index_order.run,
+    "generate_index.run": generate_index.run,
+    "print.run": print.run 
 }
 
 

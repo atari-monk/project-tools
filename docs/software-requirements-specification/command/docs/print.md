@@ -15,16 +15,16 @@ Module `/home/atari-monk/atari-monk/project/project-tools/src/project_tools/modu
 
 #### scan_docs
 
-* Dataclass `DocsCategories` with file system data
-* Helper function `scan_docs(path: Path)->DocsCategories`
-* Gathers info on folders and stores them in `DocsCategories` data
-* These folders are in docs or md files parent and contain md files
+* Use best data model u want to represent folders data
+* Helper function `scan_docs(path: Path)->data`
+* Gathers info on folders and stores them in data model
+* These folders are in docs or any folder containing md files
 * These folders define categories of md files 
 
 #### print_docs
 
-* `print_docs(DocsCategories)->str`
-* Takes `DocsCategories` and renders it to string for console printout
+* `print_docs(data: ?)->str`
+* Takes data and renders it to string for console printout
 
 ### Commits 
 
