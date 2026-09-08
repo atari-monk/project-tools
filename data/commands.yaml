@@ -131,6 +131,36 @@ commands:
   docs:
     help: Documentation commands.
     commands:
+      print:
+        help: Print documentation categories.
+        function: print.run
+        args:
+          - short_flag: "-p"
+            flag: "--path"
+            required: true
+            type: path
+            help: Path to docs or folder containing md files
+      new:
+        help: Create a new documentation file from clipboard content.
+        function: new.run
+        args:
+          - short_flag: "-p"
+            flag: "--path"
+            required: true
+            type: path
+            help: Path to docs or folder containing md files
+
+          - short_flag: "-c"
+            flag: "--category"
+            required: true
+            type: str
+            help: Path to documentation category folders
+
+          - short_flag: "-n"
+            flag: "--name"
+            required: true
+            type: str
+            help: Kebab-case markdown file name
       gen_idx_order:
         help: Generate docs index order for project.
         function: generate_index_order.run
@@ -149,12 +179,3 @@ commands:
             required: true
             type: path
             help: Path to folder with md docs
-      print:
-        help: Print documentation categories.
-        function: print.run
-        args:
-          - short_flag: "-p"
-            flag: "--path"
-            required: true
-            type: path
-            help: Path to docs or folder containing md files

@@ -8,7 +8,7 @@ from project_tools.command import (
     note,
 )
 from project_tools.command.files import setup_structure, bundle, delete_project
-from project_tools.command.docs import print, generate_index_order, generate_index
+from project_tools.command.docs import print, new, generate_index_order, generate_index
 from project_tools.command.gen import generate_py_cli, generate_atom_game
 
 
@@ -40,9 +40,10 @@ COMMAND_FUNCTIONS = {
     "delete_project.run": delete_project.run,
     "generate_py_cli.run": generate_py_cli.run,
     "generate_atom_game.run": generate_atom_game.run,
+    "print.run": print.run,
+    "new.run": new.run,
     "generate_index_order.run": generate_index_order.run,
     "generate_index.run": generate_index.run,
-    "print.run": print.run 
 }
 
 
