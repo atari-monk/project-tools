@@ -1,0 +1,51 @@
+chore: project setup.
+docs: basic python conventions.
+feature: file system helpers.
+docs: file order data.
+feature: argparse setup.
+feature: init cli command setup.
+feature: init cli command.
+docs: group commands.
+feature: delete project command.
+docs: how to add command.
+chore: rename.
+feature: generate docs index order command.
+docs: update timer.
+feature: generate docs index.
+chore: rename src files.
+docs: refactor srs to new template.
+feature: timer.
+chore: rename src files.
+feature: implement timer functionality.
+docs: prompts.
+docs: set pages theme.
+feature: setup structure.
+feature: file bundler.
+chore: update structure data.
+feature: implement timer logger.
+feature: note.
+chore: restructure folders.
+refactor: data model for py cli project generator.
+refactor: composite configs for py cli generator.
+fix: import in timer runner.
+refactor: convenience functions.
+feature: atom game project generator.
+refactor: file table for py cli proj generator.
+refactor: new argparse setup based on yaml data.
+refactor: commands can be nested in yaml.
+fix: restore parser reference.
+refactor: make generatos nested under gen command.
+fix: model bug in py cli generator.
+refactor: remove redundant log deletion command.
+refactor: files group for commands.
+docs: remove log delete command srs.
+feature: generalize order file for docs index.
+fix: custom note logger.
+docs: group commands srs.
+chore: group commands src.
+fix: custom timer logger.
+fix: generate docs index on any folder.
+chore: rename docs src.
+feature: print docs.
+feature: new doc.
+docs: reorganized docs.

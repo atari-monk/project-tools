@@ -1,50 +1,33 @@
 ## Documentation Index
 
-### Software Requirements Specification
+- [Project Structure](project-structure.md)
+- [Git History](git-history.md)
 
-* [Srs Template](software-requirements-specification/srs-template.md)
-* [Project Template](software-requirements-specification/project-template.md)
-* [File System](software-requirements-specification/file-system.md)
-* [Logger](software-requirements-specification/logger.md)
-* [Argparse Setup](software-requirements-specification/argparse-setup.md)
-* [Main](software-requirements-specification/main.md)
+### Command Srs
 
-#### Command
+- [Note](command-srs/note.md)
+- [Timer](command-srs/timer.md)
 
-* [Timer](software-requirements-specification/command/timer.md)
-* [Note](software-requirements-specification/command/note.md)
+#### Docs
 
-##### Files
+- [Print](command-srs/docs/print.md)
+- [New Doc](command-srs/docs/new-doc.md)
+- [Generate Index Order](command-srs/docs/generate-index-order.md)
+- [Generate Index](command-srs/docs/generate-index.md)
 
-* [Setup Structure](software-requirements-specification/command/files/setup-structure.md)
-* [File Bundling](software-requirements-specification/command/files/file-bundling.md)
-* [Delete Project](software-requirements-specification/command/files/delete-project.md)
+#### Files
 
-##### Gen
+- [Setup Structure](command-srs/files/setup-structure.md)
+- [File Bundling](command-srs/files/file-bundling.md)
+- [Delete Project](command-srs/files/delete-project.md)
 
-* [Setup Cli Project](software-requirements-specification/command/gen/setup-cli-project.md)
+#### Gen
 
-##### Docs
+- [Setup Cli Project](command-srs/gen/setup-cli-project.md)
 
-* [Print](software-requirements-specification/command/docs/print.md)
-* [New Doc](software-requirements-specification/command/docs/new-doc.md)
-* [Generate Index Order](software-requirements-specification/command/docs/generate-index-order.md)
-* [Generate Index](software-requirements-specification/command/docs/generate-index.md)
+### Srs
 
-### Python
-
-* [Import](python/import.md)
-* [Function Name](python/function-name.md)
-
-### How To
-
-* [Set Up Venv](how-to/set-up-venv.md)
-* [Add Command](how-to/add-command.md)
-* [Run Tests](how-to/run-tests.md)
-* [Git Log](how-to/git-log.md)
-* [Project Structure](how-to/project-structure.md)
-* [Timer](how-to/timer.md)
-
-### Helper
-
-* [Bundle](helper/bundle.md)
+- [Cli Project Setup](srs/cli-project-setup.md)
+- [Helpers](srs/helpers.md)
+- [Argparse Setup V1](srs/argparse-setup-v1.md)
+- [Argparse Setup V2](srs/argparse-setup-v2.md)

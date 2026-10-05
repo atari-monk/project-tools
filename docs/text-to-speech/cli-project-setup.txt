@@ -1,0 +1,45 @@
+CLI Project Setup.
+
+Minimalistic file structure for CLI Python project.
+
+Project Config File.
+
+Create pyproject.toml.
+
+Configure the build system.
+
+Set the project name, version, and description.
+
+Define the terminal command.
+
+Use src as the source root.
+
+Hello World Entrypoint.
+
+Create the package src/package_name.
+
+Add src/package_name/cli.py with Hello World.
+
+Docs.
+
+Create folder docs.
+
+Create _config.yml with GitHub page title.
+
+Create folder srs.
+
+Create order and index files with CLI.
+
+Gitignore.
+
+Add .gitignore.
+
+For example: pycache, egg-info, venv, ruffcache, prompt.
+
+Install CLI.
+
+Test CLI Hello World in terminal.
+
+Commit message.
+
+Chore: project setup.

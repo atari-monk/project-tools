@@ -1,0 +1,45 @@
+Note.
+
+Command.
+
+Command: proj note, dash l, log_name, dash t, open quotation mark, some text, close quotation mark.
+
+Add argument, dash l, and dash dash log, alias.
+
+Add argument, dash t, and dash dash text, alias.
+
+Add flag, dash p, and dash dash print, alias.
+
+Config.
+
+Create JSON with log file names.
+
+Data, slash, note dash logs, dot JSON.
+
+Flag, dash p, prints out these as options.
+
+Load this config.
+
+Argument, dash l, must be one of these log names.
+
+Behavior.
+
+The point of this command is to log text using the CLI app logger.
+
+The logger uses its app config.
+
+Additionally, it logs to a file with log_name.
+
+Helpers.
+
+Implement structs and functions in, src, slash, project underscore tools, slash, modules, slash, note.
+
+Use them in the command.
+
+Custom Logger.
+
+The logger for this command must be a reference from the project-tools app when the dash l argument is project-tools.
+
+In this situation, use the app logger and its log file.
+
+Otherwise, set up an independent logger in the command, with a file from the dash l argument, and to the console.

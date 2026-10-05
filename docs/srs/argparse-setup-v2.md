@@ -1,4 +1,4 @@
-# How to add a command to the project-tools CLI
+## How to add a command to the project-tools CLI
 
 Commands are defined in:
 
@@ -236,8 +236,7 @@ The group itself does not have a `function`:
 ```yaml
 docs:
   help: Documentation commands.
-  commands:
-    ...
+  commands: ...
 ```
 
 Only leaf commands have a `function`.

@@ -1,8 +1,14 @@
 {
     "logs": [
+        "dev-notes",
         "project-tools",
         "bowling-game",
+        "match-pairs",
+        "atom-engine",
+        "atom-starter",
+        "box-game",
         "log",
+        "chat-gpt",
         "watch_later",
         "ideas",
         "todo",
@@ -10,6 +16,13 @@
         "jobs",
         "diy",
         "games",
-        "health"
+        "health",
+        "bills",
+        "plan",
+        "shopping",
+        "chores",
+        "video",
+        "sex",
+        "journal"
     ]
 }

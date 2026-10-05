@@ -1,0 +1,111 @@
+project-tools folder.
+	data folder.
+		bundle.
+		commands.
+		note-logs.
+		projects.
+	docs folder.
+		command-srs folder.
+			docs folder.
+				generate-index.
+				generate-index-order.
+				new-doc.
+				print.
+			files folder.
+				delete-project.
+				file-bundling.
+				setup-structure.
+			gen folder.
+				setup-cli-project.
+			note.
+			timer.
+		_config.
+		git-history.
+		index.
+		order.
+		project-structure.
+		srs folder.
+			argparse-setup-v1.
+			argparse-setup-v2.
+			cli-project-setup.
+			helpers.
+		text-to-speech folder.
+			cli-project-setup.
+	.gitignore.
+	prompt folder.
+		command.
+		prompt.
+		srs.
+		task.
+	pyproject.
+	pyrightconfig.
+	src folder.
+		project-tools folder.
+			argparse-setup.
+			cli.
+			command folder.
+				docs folder.
+					generate-index-order.
+					generate-index.
+					new.
+					print.
+				files folder.
+					bundle.
+					delete-project.
+					setup-structure.
+				gen folder.
+					generate-atom-game.
+					generate-py-cli.
+				note.
+				timer.
+			config.
+			modules folder.
+				bundle folder.
+					bundler.
+					model.
+				docs folder.
+					discovery.
+					index.
+					index-render.
+					new.
+					order.
+					print.
+				note folder.
+					config.
+				project-atom-game folder.
+					files.
+					generator.
+				project-py-cli folder.
+					data-model.
+					files.
+					generator.
+				project-shared folder.
+					data-model.
+					generator.
+					types.
+					utils.
+				setup-structure folder.
+					creator.
+					loader.
+					model.
+					orchestrator.
+				timer folder.
+					duration.
+					events.
+					log.
+					notification.
+					runner.
+					sound.
+					worker.
+			shared folder.
+				file-system.
+				logger.
+			spec-loader.
+			spec.
+			spec-test.
+	tests folder.
+		shared folder.
+			setup-structure folder.
+				test-creator.
+				test-loader.
+				test-orchestrator.
